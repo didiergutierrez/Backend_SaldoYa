@@ -21,7 +21,7 @@ public class ClienteModelo {
     private String Correo;
     private String Contraseña;
     private String NumeroCelular;
-    private int Direccion;
+    private String Direccion;
     private String Sexo;
     private int Saldo;
     
@@ -61,10 +61,10 @@ public class ClienteModelo {
     public void setNumeroCelular(String numeroCelular) {
         NumeroCelular = numeroCelular;
     }
-    public int getDireccion() {
+    public String getDireccion() {
         return Direccion;
     }
-    public void setDireccion(int direccion) {
+    public void setDireccion(String direccion) {
         Direccion = direccion;
     }
     public String getSexo() {
