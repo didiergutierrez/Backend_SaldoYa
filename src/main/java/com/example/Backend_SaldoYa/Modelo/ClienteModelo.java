@@ -8,14 +8,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "cliente")
+@Table(name="cliente")
 public class ClienteModelo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private Long Cedula;
+    private Long id;
 
+
+    private Long Cedula;
     private String NombreCompleto;
     private String TipoDocumento;
     private String Correo;
@@ -80,6 +82,12 @@ public class ClienteModelo {
         Saldo = saldo;
     }
 
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
     
 
 }

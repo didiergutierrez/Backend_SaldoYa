@@ -1,6 +1,7 @@
 package com.example.Backend_SaldoYa.Controlador;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import com.example.Backend_SaldoYa.Modelo.ClienteModelo;
@@ -9,6 +10,7 @@ import com.example.Backend_SaldoYa.Servicios.ClienteServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,9 +36,10 @@ public class ClienteControlador {
         return clienteServicio.guardarCliente(cliente);
     }
 
-    @GetMapping(path="/{id}")
-        public Optional<ClienteModelo>consultarCliente(@PathVariable("id") Long id){
-            return this.clienteServicio.consultarcliente(id);
-        }
+    @GetMapping(path="/{cedula}")
+    public Optional<ClienteModelo> consultarCedula(@PathVariable("cedula") Long Cedula){
+        return this.clienteServicio.ConsultarCedula(Cedula);
+    }
+
 
 }
