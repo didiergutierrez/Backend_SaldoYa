@@ -16,7 +16,7 @@ public class ClienteModelo {
     @Column(unique = true, nullable = false)
     private Long id;
 
-
+    @Column(unique=true,nullable = false)
     private Long Cedula;
     private String NombreCompleto;
     private String TipoDocumento;
