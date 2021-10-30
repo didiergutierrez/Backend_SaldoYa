@@ -16,6 +16,8 @@ public class TiendaModelo {
     long id;
     String NombreTienda;
     String tipoNegocio;
+    String Contraseña;
+
     public long getId() {
         return id;
     }
@@ -40,6 +42,6 @@ public class TiendaModelo {
     public void setContraseña(String contraseña) {
         Contraseña = contraseña;
     }
-    String Contraseña;
+    
         
 }

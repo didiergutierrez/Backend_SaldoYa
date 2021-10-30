@@ -14,7 +14,13 @@ public class RegSaldoModelo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     long id;
-    long idTienda;public long getId() {
+    long idTienda;
+    long cedula;
+    int valorSaldo;
+    
+    
+    
+    public long getId() {
     return id;
 }
 public void setId(long id) {
@@ -39,7 +45,6 @@ public void setId(long id) {
     public void setValorSaldo(int valorSaldo) {
         this.valorSaldo = valorSaldo;
     }
-    long cedula;
-    int valorSaldo;
+    
 
 }
