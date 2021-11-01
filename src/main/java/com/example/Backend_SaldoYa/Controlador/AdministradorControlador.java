@@ -3,10 +3,9 @@ package com.example.Backend_SaldoYa.Controlador;
 import java.util.ArrayList;
 import java.util.Optional;
 
-import com.example.Backend_SaldoYa.Modelo.TiendaModelo;
-import com.example.Backend_SaldoYa.Servicios.TiendaServicio;
+import com.example.Backend_SaldoYa.Modelo.AdministradorModelo;
+import com.example.Backend_SaldoYa.Servicios.AdministradorServicio;
 
-import org.hibernate.SQLQuery.RootReturn;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,23 +18,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "*",methods = {RequestMethod.GET,RequestMethod.POST})
-@RequestMapping("/tienda")
-public class TiendaControlador {
+@RequestMapping("/admin")
+public class AdministradorControlador {
     @Autowired
-    TiendaServicio tiendaServicio;
+    AdministradorServicio adminServicio;
 
     @GetMapping
-    public ArrayList<TiendaModelo> obtenerTienda(){
-        return (ArrayList<TiendaModelo>) tiendaServicio.obtenerTiendas();
+    public ArrayList<AdministradorModelo> obtenerAdmiins(){
+        return adminServicio.obtenerAdmin();
     }
-
     @PostMapping
-    public TiendaModelo guardarTienda(@RequestBody TiendaModelo tienda){
-        return tiendaServicio.guardarTienda(tienda);
+    public AdministradorModelo guardarAdministrador(@RequestBody AdministradorModelo admin){
+        return adminServicio.guardarAdministrador(admin);
+    }
+    @GetMapping(path = "/{cedula}")
+    public Optional<AdministradorModelo> consultaCedula(@PathVariable("cedula") Long Cedula){
+        return this.adminServicio.consultarCedula(Cedula);
     }
 
-    @GetMapping(path="/{ru}")
-    public Optional<TiendaModelo> consultaRu(@PathVariable("ru") Long ru){
-        return this.tiendaServicio.consultarRu(ru);
-    }
 }

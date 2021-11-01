@@ -9,7 +9,6 @@ import com.example.Backend_SaldoYa.Modelo.ClienteModelo;
 import com.example.Backend_SaldoYa.Repositorio.ClienteRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -18,12 +17,12 @@ public class ClienteServicio {
     @Autowired
     ClienteRepo clienteRepo;
     
-    //Guarda un estudiante
+    //Guarda un Cliente
     public ClienteModelo guardarCliente(ClienteModelo cliente){
         return clienteRepo.save(cliente);
     }
 
-    //duelve un array de todos los estudiantes en la BD
+    //duelve un array de todos los clientes en la BD
     public ArrayList<ClienteModelo> obtenerClientes(){
         return (ArrayList<ClienteModelo>) clienteRepo.findAll();
     }

@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="regSaldo")
-public class RegSaldoModelo {
+public class SaldoModelo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)

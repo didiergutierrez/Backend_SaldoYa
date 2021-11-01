@@ -14,6 +14,14 @@ public class TiendaModelo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     long id;
+    @Column(unique = true, nullable = false)
+    long Ru;
+    public long getRu() {
+        return Ru;
+    }
+    public void setRu(long ru) {
+        Ru = ru;
+    }
     String NombreTienda;
     String tipoNegocio;
     String Contraseña;

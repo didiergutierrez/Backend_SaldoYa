@@ -37,7 +37,7 @@ public class ClienteControlador {
     }
 
     @GetMapping(path="/{cedula}")
-    public Optional<ClienteModelo> consultarCedula(@PathVariable("cedula") Long Cedula){
+    public Optional<ClienteModelo> consultarRu(@PathVariable("cedula") Long Cedula){
         return this.clienteServicio.ConsultarCedula(Cedula);
     }
 
