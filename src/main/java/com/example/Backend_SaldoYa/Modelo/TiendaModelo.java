@@ -16,15 +16,16 @@ public class TiendaModelo {
     long id;
     @Column(unique = true, nullable = false)
     long Ru;
+    String NombreTienda;
+    String tipoNegocio;
+    String Contraseña;
     public long getRu() {
         return Ru;
     }
     public void setRu(long ru) {
         Ru = ru;
     }
-    String NombreTienda;
-    String tipoNegocio;
-    String Contraseña;
+    
 
     public long getId() {
         return id;
